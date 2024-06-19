@@ -23,10 +23,15 @@ void *inputNumbers(void *arg) {
     Queue *q = (Queue *)arg;
     int num;
 
-    while (scanf("%d", &num) != EOF) {
+    while (1) {
+        if (scanf("%d", &num) == EOF) {
+            break; // Exit the loop if end of input is reached
+        }
         pushToQueue(q, num);
     }
-    for (int i = 6; i > 0; i--) {
+
+    // Push sentinel values to signal end of input
+    for (int i = 0; i < 6; ++i) {
         pushToQueue(q, -1);
     }
 
@@ -40,38 +45,35 @@ void *outputNumbers(void *arg) {
 
     while (1) {
         num = popFromQueue(q);
+        if (num == -1) {
+            pushToQueue(q, -1);  // Signal to other consumers
+            break;
+        }
         if (isPrime(num)) {
             atomic_fetch_add(&q->prime_count, 1);
-        }
-        if (num == -1) {
-            break;
+            // printf("%d is prime\n", num);
         }
     }
     return NULL;
 }
 
 int main() {
-     int num;
-    int total_counter = 0;
-    Queue *queue = createQueue();
+        Queue *queue = createQueue();
 
-    pthread_t producerThread, consumerThread1, consumerThread2, consumerThread3, consumerThread4, consumerThread5, consumerThread6;
+    pthread_t producerThread;
+    pthread_t consumerThreads[6];
 
     pthread_create(&producerThread, NULL, inputNumbers, queue);
-    pthread_create(&consumerThread1, NULL, outputNumbers, queue);
-    pthread_create(&consumerThread2, NULL, outputNumbers, queue);
-    pthread_create(&consumerThread3, NULL, outputNumbers, queue);
-    pthread_create(&consumerThread4, NULL, outputNumbers, queue);
-    pthread_create(&consumerThread5, NULL, outputNumbers, queue);
-    pthread_create(&consumerThread6, NULL, outputNumbers, queue);
+
+    for (int i = 0; i < 6; ++i) {
+        pthread_create(&consumerThreads[i], NULL, outputNumbers, queue);
+    }
 
     pthread_join(producerThread, NULL);
-    pthread_join(consumerThread1, NULL);
-    pthread_join(consumerThread2, NULL);
-    pthread_join(consumerThread3, NULL);
-    pthread_join(consumerThread4, NULL);
-    pthread_join(consumerThread5, NULL);
-    pthread_join(consumerThread6, NULL);
+
+    for (int i = 0; i < 6; ++i) {
+        pthread_join(consumerThreads[i], NULL);
+    }
 
     printf("%d total primes.\n", queue->prime_count);
 
