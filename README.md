@@ -37,12 +37,6 @@ To compile the project, run the following command:
 make
 ```
 
-To compile the project, run the following command:
-
-```sh
-make
-```
-
 ### Run
 To run the random number generator and prime counter, use:
 
@@ -80,8 +74,9 @@ To ensure memory usage is below 2MB, use tools like valgrind or time with memory
 ```sh
 /usr/bin/time -v ./randomGenerator 10 10000000 | ./primeCounter
 ```
+![alt text](memory.png)
 
-Ensure that the Maximum resident set size is below 2048 KB.
+We can see that the Maximum resident set size is below 2048 KB.
 
 ## Explanation of Key Functions
 isPrime(int n)
