@@ -17,7 +17,7 @@ This project implements a highly efficient, multithreaded application to count p
 ## Structure
 
 - `primeCounters.c`: Contains the main logic of the application, including thread creation and synchronization.
-- `queue.c`: Implements a thread-safe queue to hold the numbers.
+- `lfq.c`: Implements a lock-free queue to hold the numbers. (We used the hint provided)
 - `generator.c`: Simulates the endless stream of random numbers.
 - `Makefile`: For building the project.
 
