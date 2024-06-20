@@ -67,7 +67,7 @@ time ./randomGenerator 10 10000000 | ./primeCounter
 
 ## Screenshots
 Include screenshots showing the execution time for both the reference and improved implementations.
-![First Run](<firstRun>)
+![alt text](<Screenshot from 2024-06-20 10-30-24.png>)
 
 ## Memory Usage
 To ensure memory usage is below 2MB, use tools like valgrind or time with memory profiling options:
