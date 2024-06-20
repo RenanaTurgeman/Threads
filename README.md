@@ -67,7 +67,7 @@ time ./randomGenerator 10 10000000 | ./primeCounter
 
 ## Screenshots
 Include screenshots showing the execution time for both the reference and improved implementations.
-![WhatsApp Image 2024-06-19 at 11 37 57_880b43de](https://github.com/RenanaTurgeman/Threads/assets/117759983/ab0aa6c1-77c0-440b-9c0e-8e8d6b83f9ed)
+![First Run](<firstRun>)
 
 ## Memory Usage
 To ensure memory usage is below 2MB, use tools like valgrind or time with memory profiling options:
