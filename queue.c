@@ -3,14 +3,14 @@
 #include <stdlib.h>
 #include <stdatomic.h>
 
-#define MAX_QUEUE_SIZE 1000 // Adjust according to your needs
+#define MAX_QUEUE_SIZE 1024 // Adjust according to your needs
 
 typedef struct {
+    int current_size;
+    int max_capacity;
     int* buffer;
     int head;
     int tail;
-    int current_size;
-    int max_capacity;
     atomic_int prime_count;
     pthread_mutex_t lock;
     pthread_cond_t condition;
@@ -42,27 +42,6 @@ Queue* createQueue() {
     return queue;
 }
 
-void pushToQueue(Queue* queue, int value) {
-    pthread_mutex_lock(&queue->lock);
-
-    while ((queue->tail + 1) % queue->max_capacity == queue->head) {
-        pthread_cond_wait(&queue->condition, &queue->lock); // Wait if the queue is full
-    }
-
-    if (queue->head == -1) {
-        queue->head = 0;
-        queue->tail = 0;
-    } else {
-        queue->tail = (queue->tail + 1) % queue->max_capacity;
-    }
-
-    queue->buffer[queue->tail] = value;
-    queue->current_size++;
-
-    pthread_mutex_unlock(&queue->lock);
-    pthread_cond_signal(&queue->condition); // Notify that a value has been added
-}
-
 int popFromQueue(Queue* queue) {
     pthread_mutex_lock(&queue->lock);
 
@@ -85,6 +64,28 @@ int popFromQueue(Queue* queue) {
 
     return value;
 }
+
+void pushToQueue(Queue* queue, int value) {
+    pthread_mutex_lock(&queue->lock);
+
+    while ((queue->tail + 1) % queue->max_capacity == queue->head) {
+        pthread_cond_wait(&queue->condition, &queue->lock); // Wait if the queue is full
+    }
+
+    if (queue->head == -1) {
+        queue->head = 0;
+        queue->tail = 0;
+    } else {
+        queue->tail = (queue->tail + 1) % queue->max_capacity;
+    }
+
+    queue->buffer[queue->tail] = value;
+    queue->current_size++;
+
+    pthread_mutex_unlock(&queue->lock);
+    pthread_cond_signal(&queue->condition); // Notify that a value has been added
+}
+
 
 void removeQueue(Queue* queue) {
     free(queue->buffer);
