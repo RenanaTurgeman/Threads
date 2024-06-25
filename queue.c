@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <stdatomic.h>
 
-#define MAX_QUEUE_SIZE 1024 // Adjust according to your needs
+#define MAX_QUEUE_SIZE 1000 // Adjust according to your needs
 
 typedef struct {
     int current_size;

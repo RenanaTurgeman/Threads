@@ -73,7 +73,7 @@ Unchanged runtimes of the isPrime function:
 ![alt text](image-1.png)
 
 The running times after changing the isPrime function:
-![alt text](image.png)
+![alt text](after_changes.png)
 
 ## Memory Usage
 To ensure memory usage is below 2MB, use tools like valgrind or time with memory profiling options:

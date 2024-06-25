@@ -4,32 +4,32 @@
 
 #include "queue.c" // Header file containing the queue implementation
 
-// bool isPrime(int n) {
-//     if (n <= 1) return false;
-//     if (n <= 3) return true; // 2 and 3 are prime numbers
-    
-//     // Eliminate multiples of 2 and 3
-//     if (n % 2 == 0 || n % 3 == 0) return false;
-
-//     // Check for factors from 5 onwards, skipping multiples of 2 and 3
-//     for (int i = 5; i * i <= n; i += 6) {
-//         if (n % i == 0 || n % (i + 2) == 0) return false;
-//     }
-    
-//     return true;
-// }
-// Function to check if a number is prime
 bool isPrime(int n) {
-    if (n <= 1) {
-        return false;
+    if (n <= 1) return false;
+    if (n <= 3) return true; // 2 and 3 are prime numbers
+    
+    // Eliminate multiples of 2 and 3
+    if (n % 2 == 0 || n % 3 == 0) return false;
+
+    // Check for factors from 5 onwards, skipping multiples of 2 and 3
+    for (int i = 5; i * i <= n; i += 6) {
+        if (n % i == 0 || n % (i + 2) == 0) return false;
     }
-    for (int i = 2; i * i <= n; i++) {
-        if (n % i == 0) {
-            return false;
-        }
-    }
-    return true;
+    
+   return true;
 }
+// Function to check if a number is prime
+// bool isPrime(int n) {
+//     if (n <= 1) {
+//         return false;
+//     }
+//     for (int i = 2; i * i <= n; i++) {
+//         if (n % i == 0) {
+//             return false;
+//         }
+//     }
+//     return true;
+// }
 
 // Function for the producer thread to input numbers into the queue
 void *inputNumbers(void *arg) {
