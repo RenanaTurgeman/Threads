@@ -1,0 +1,264 @@
+desc: --heap=yes --stacks=no
+cmd: ./primeCounter
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=183602
+mem_heap_B=120
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=183642
+mem_heap_B=4120
+mem_heap_extra_B=24
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=184981
+mem_heap_B=4392
+mem_heap_extra_B=32
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=185842
+mem_heap_B=4664
+mem_heap_extra_B=40
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=186678
+mem_heap_B=4936
+mem_heap_extra_B=48
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=187514
+mem_heap_B=5208
+mem_heap_extra_B=56
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=188350
+mem_heap_B=5480
+mem_heap_extra_B=64
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=189186
+mem_heap_B=5752
+mem_heap_extra_B=72
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=190022
+mem_heap_B=6024
+mem_heap_extra_B=80
+mem_stacks_B=0
+heap_tree=detailed
+n3: 6024 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4000 0x10935B: createQueue (in /home/renana/Desktop/task2_b/primeCounter)
+  n0: 4000 0x109792: main (in /home/renana/Desktop/task2_b/primeCounter)
+ n1: 1904 0x40147D9: calloc (rtld-malloc.h:44)
+  n1: 1904 0x40147D9: allocate_dtv (dl-tls.c:375)
+   n1: 1904 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
+    n1: 1904 0x48F5834: allocate_stack (allocatestack.c:430)
+     n2: 1904 0x48F5834: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
+      n0: 1632 0x1097EA: main (in /home/renana/Desktop/task2_b/primeCounter)
+      n0: 272 0x1097B5: main (in /home/renana/Desktop/task2_b/primeCounter)
+ n1: 120 0x10932D: createQueue (in /home/renana/Desktop/task2_b/primeCounter)
+  n0: 120 0x109792: main (in /home/renana/Desktop/task2_b/primeCounter)
+#-----------
+snapshot=10
+#-----------
+time=192516
+mem_heap_B=10120
+mem_heap_extra_B=88
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=204678664306
+mem_heap_B=10120
+mem_heap_extra_B=88
+mem_stacks_B=0
+heap_tree=detailed
+n4: 10120 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4096 0x48DEC23: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 4096 0x48EDD5F: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48ECD5B: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48EDE15: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48C314F: __vfscanf_internal (vfscanf-internal.c:628)
+      n1: 4096 0x48C21C1: __isoc99_scanf (isoc99_scanf.c:30)
+       n1: 4096 0x1096B2: inputNumbers (in /home/renana/Desktop/task2_b/primeCounter)
+        n1: 4096 0x48F4B42: start_thread (pthread_create.c:442)
+         n0: 4096 0x4985BB3: clone (clone.S:100)
+ n1: 4000 0x10935B: createQueue (in /home/renana/Desktop/task2_b/primeCounter)
+  n0: 4000 0x109792: main (in /home/renana/Desktop/task2_b/primeCounter)
+ n1: 1904 0x40147D9: calloc (rtld-malloc.h:44)
+  n1: 1904 0x40147D9: allocate_dtv (dl-tls.c:375)
+   n1: 1904 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
+    n1: 1904 0x48F5834: allocate_stack (allocatestack.c:430)
+     n2: 1904 0x48F5834: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
+      n0: 1632 0x1097EA: main (in /home/renana/Desktop/task2_b/primeCounter)
+      n0: 272 0x1097B5: main (in /home/renana/Desktop/task2_b/primeCounter)
+ n1: 120 0x10932D: createQueue (in /home/renana/Desktop/task2_b/primeCounter)
+  n0: 120 0x109792: main (in /home/renana/Desktop/task2_b/primeCounter)
+#-----------
+snapshot=12
+#-----------
+time=204678664306
+mem_heap_B=9848
+mem_heap_extra_B=80
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=204678664875
+mem_heap_B=9576
+mem_heap_extra_B=72
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=204678665444
+mem_heap_B=9304
+mem_heap_extra_B=64
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=204678666096
+mem_heap_B=10328
+mem_heap_extra_B=72
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=204678666992
+mem_heap_B=10328
+mem_heap_extra_B=72
+mem_stacks_B=0
+heap_tree=peak
+n4: 10328 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48DEC23: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48EDD5F: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48ECD5B: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48EDE15: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48C314F: __vfscanf_internal (vfscanf-internal.c:628)
+      n1: 4096 0x48C21C1: __isoc99_scanf (isoc99_scanf.c:30)
+       n1: 4096 0x1096B2: inputNumbers (in /home/renana/Desktop/task2_b/primeCounter)
+        n1: 4096 0x48F4B42: start_thread (pthread_create.c:442)
+         n0: 4096 0x4985BB3: clone (clone.S:100)
+   n1: 1024 0x48ECFDF: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48EB754: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48EB754: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48D5D28: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48D5D28: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48C081E: printf (printf.c:33)
+         n0: 1024 0x109855: main (in /home/renana/Desktop/task2_b/primeCounter)
+ n1: 4000 0x10935B: createQueue (in /home/renana/Desktop/task2_b/primeCounter)
+  n0: 4000 0x109792: main (in /home/renana/Desktop/task2_b/primeCounter)
+ n1: 1088 0x40147D9: calloc (rtld-malloc.h:44)
+  n1: 1088 0x40147D9: allocate_dtv (dl-tls.c:375)
+   n1: 1088 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
+    n1: 1088 0x48F5834: allocate_stack (allocatestack.c:430)
+     n2: 1088 0x48F5834: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
+      n0: 1088 0x1097EA: main (in /home/renana/Desktop/task2_b/primeCounter)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 120 0x10932D: createQueue (in /home/renana/Desktop/task2_b/primeCounter)
+  n0: 120 0x109792: main (in /home/renana/Desktop/task2_b/primeCounter)
+#-----------
+snapshot=17
+#-----------
+time=204678666992
+mem_heap_B=6328
+mem_heap_extra_B=64
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=204678667023
+mem_heap_B=6208
+mem_heap_extra_B=48
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=204678669710
+mem_heap_B=2112
+mem_heap_extra_B=40
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=204678669744
+mem_heap_B=1088
+mem_heap_extra_B=32
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=204678671142
+mem_heap_B=816
+mem_heap_extra_B=24
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=204678671543
+mem_heap_B=544
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=204678671944
+mem_heap_B=272
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=204678672345
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty

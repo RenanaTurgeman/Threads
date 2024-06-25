@@ -1,17 +1,12 @@
-CC = gcc
-CFLAGS = -std=c11 -pthread
-TARGET = primeCounter
+.PHONY: all
+all: generator primeCounter
 
-all: $(TARGET)
+generator:  generator.c
+	gcc -o randomGenerator generator.c
 
-$(TARGET): primeCounter.o lfq.o
-	$(CC) $(CFLAGS) -o $(TARGET) primeCounter.o lfq.o
+primeCounter:	primeCounter.c
+	gcc -o primeCounter primeCounter.c
 
-primeCounter.o: primeCounter.c lfq.h
-	$(CC) $(CFLAGS) -c primeCounter.c
-
-lfq.o: lfq.c lfq.h
-	$(CC) $(CFLAGS) -c lfq.c
-
+.PHONY: clean
 clean:
-	rm -f $(TARGET) *.o
+	-rm randomGenerator primeCounter 2>/dev/null
