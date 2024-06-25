@@ -83,7 +83,17 @@ To ensure memory usage is below 2MB, use tools like valgrind or time with memory
 ```
 ![WhatsApp Image 2024-06-19 at 11 37 38_b227566f](https://github.com/RenanaTurgeman/Threads/assets/117759983/6c9df6a6-5e0b-48aa-b71e-d95f0af069e5)
 
-We can see that the Maximum resident set size is below 2048 KB.
+We can see that the Maximum resident set size is below 2048 KB.\
+
+in another way:
+```sh
+./randomGenerator 10 10000000 | valgrind --tool=massif --heap=yes --stacks=no ./primeCounter
+```
+and then run:
+```sh
+ms_print <NAME_OF_THE_FILE>
+```
+![alt text](ram_use.png)
 
 ## Explanation of Key Functions
 isPrime(int n)
