@@ -67,7 +67,7 @@ time ./randomGenerator 10 10000000 | ./primeCounter
 
 ## Screenshots
 Running times of the initial code without changes:
-![alt text](<first_run.png>)
+![alt text](first_run.png)
 
 Unchanged runtimes of the isPrime function:
 ![alt text](withoutChangeIsPrime.png)
